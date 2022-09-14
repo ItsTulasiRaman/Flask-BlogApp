@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+{% block title %} Editing Post {% endblock title %} 
+
+{% block style %}
+<style>
+    div.center {
+        text-align: center
+    }
+</style>
+{% endblock style %}
+{% block content %}
+<div class="center">
+    <h1>Edit this Post</h1>
+</div>
+<hr>
+<form action="/posts/edit/{{post.id}}" method="POST">
+
+    <h2>Edit Post </h2>
+    <label>Title: </label>
+    <br>
+    <input type="text" class="form-control" id="title" aria-describedby="TitleHelp" name="title" placeholder="Enter the your blog post title here" value="{{post.title}}" required>
+    <small id="TitleHelp" class="form-text text-muted">Title is mandatory</small>
+    <br><br>
+    <label for="content">Blog content:</label>
+    <textarea type="text" class="form-control" id="content" aria-describedby="ContentHelp" name="content" placeholder="Enter you Blog content here" rows="6">{{post.content}}</textarea> 
+    <br>
+    <label for="author">Author:</label>
+    <br>
+    <input type="text" class="form-control" id="author" aria-describedby="AuthorHelp" name="author" placeholder="Enter the author name here" value="{{post.author}}">
+    <br>
+    <input class="btn btn-reset" type="reset" >
+    <input class="btn btn-submit" type="submit" value="Confirm your submission">
+
+    <!-- <label>Title: </label>
+    <br>
+    <input type="text" placeholder="Enter the your blog post title here" name="title" id="title" value="{{post.title}}">  
+    <!--this value here is fetches the value from the desired location for example if value="cow" then in the edit the 
+        page title's input would be already filled in as "cow". Here the value is post.id which is the respective id 
+        of the post that needs to be edited-->
+    <!-- <br><br>
+    Edit your Blog content here:
+    <br>
+    <input type="text" placeholder="Enter you Blog content here" name="content" id="content" value="{{post.content}}">
+    <br><br>
+    <label>Author:</label>
+    <br>
+    <input type="text" placeholder="Enter the author name here" name="author" id="author" value="{{post.author}}">
+    <br><br>
+    <input type="reset">
+    <input type="submit" value="Confirm your submission"> --> 
+
+</form>
+<hr>
+{% endblock %} 
+

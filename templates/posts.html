@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock title %}
+<!--#only the title name-->
+
+
+{% block style %}
+<!--style whitin the style block-->
+{% endblock style %}
+
+
+
+{% block content %}
+<!--only content block-->
+
+<hr>
+<br>
+<form action="/posts" method="POST" style="padding:10px;border-radius:10px ;background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%); opacity:0.80; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+  <br>
+    <!--To get input form /posts site to insert in db-->
+    <h2>Enter the details here: </h2>
+    <label>Title: </label>
+    <!--using <label> is a good practice-->
+    <br>
+    <input type="text" class="form-control" id="title" aria-describedby="TitleHelp" name="title" placeholder="Enter the your blog post title here" required>
+    <small id="TitleHelp" class="form-text text-muted">Title is mandatory</small>
+    <!-- <input type="text" placeholder="Enter the your blog post title here" name="title" id="title" required> -->
+    <br><br>
+    <!-- br=>breaks line or new line-->
+    <label for="content">Blog content:</label>
+    <textarea type="text" class="form-control" id="content" aria-describedby="ContentHelp" name="content" placeholder="Enter you Blog content here" rows="6"></textarea> 
+    <!-- <input type="text" class="form-control" id="content" aria-describedby="ContentHelp" name="content" placeholder="Enter you Blog content here"> -->
+    <!-- <input type="text" placeholder="Enter you Blog content here" name="content" id="content"> -->
+    <br>
+    <label for="author">Author:</label>
+    <br>
+    <input type="text" class="form-control" id="author" aria-describedby="AuthorHelp" name="author" placeholder="Enter the author name here">
+    <!-- <input type="text" placeholder="Enter the author name here" name="author" id="author"> -->
+    <br>
+    <input class="btn btn-reset" type="reset" >
+    <input class="btn btn-submit" type="submit" value="Confirm your submission">
+<br><br>
+</form>
+<hr>
+
+<div class="mx-auto" style="width: 200px;">
+    <h1>All Posts</h1>
+  </div>
+  {%for post in posts %}
+  <div class="post-border">
+<h2>{{ post['title'] }}</h2>
+<p style="white-space:pre-wrap"> {{ post['content'] }}</p>  <!--Here this style="white-space:pre-wrap" is so important to included white spaces like mulitple blank lines --> 
+{%if post.author%}
+<p>Written by : <b>{{post.author}}</b> on [<i>{{post.date_posted}}</i>]</p>
+{%else%}
+<p>Written by : <b>Anonymous</b> on [<i>{{post.date_posted}}</i>]</p>
+{%endif%}
+<a class="btn btn-danger" href='/posts/delete/{{post.id}}'>Delete Post</a>
+<!--<a href>  is tje syntax, "a" cannot be changed-->
+<a class="btn btn-primary" href='/posts/edit/{{post.id}}'>Edit Post</a>
+</div>
+<br>
+{% endfor %}
+
+
+
+{% endblock content %}

@@ -1,0 +1,75 @@
+content {
+    font-family: cursive;
+    background-color: rgb(215, 151, 242);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+body{
+  background-image: linear-gradient(to bottom, rgb(91, 77, 173) 0%,rgb(4, 178, 132) 50%,rgb(87, 0, 22) 100%);
+}
+  .btn {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: auto;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size:10px;
+    color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+   }
+
+   .btn-reset{
+      display: inline;
+      text-align: center;
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 1em;
+      text-transform: uppercase;
+      color: white;
+      /* Button shape & animation */
+      border-radius: border-rounded;
+      margin: 10px;
+      padding: 1em 3em;
+      background-size: 200% auto;
+      color: white;
+      box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+      background-image: linear-gradient(to right, #bd5cf2 0%, #ff6868 20%, #ff0000 100%);
+      transition: 0.5s;
+   }
+   .btn-submit{
+    display:inline;
+    text-align: center;
+    text-decoration:none;
+    font-weight: 800;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: white;
+    /* Button shape & animation */
+    border-radius: border-rounded;
+    margin: 10px;
+    padding: 1em 3em;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    background-image: linear-gradient(to right, #bd5cf2 0%, #ff6868 20%, #5100ff 100%);
+    transition: 0.5s;
+ }
+  .btn:hover {
+    background-position: right center; /* change the direction of the change here */
+  }
+
+.post-border{
+    padding:10px;border-radius:10px ;
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%); 
+    opacity:0.80; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin:auto;
+    width:auto;
+    transition:.2s all; 
+  }
+  .post-border:hover{
+    background-position: right center;
+    filter:blur()
+  }
