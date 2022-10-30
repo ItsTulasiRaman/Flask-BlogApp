@@ -3,8 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app=Flask(__name__)
-#app.config['SQLAlchemy_DATABASE_URI']='postgres://aoevcjxijbvzui:7a977da6e94473b7b66497dd56b7a31792280eda65b0d5710e235c5ed2e3fbb9@ec2-44-209-57-4.compute-1.amazonaws.com:5432/d8t0kmpfhbcmur'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db' # this is a default command to start with SQLALCHEMY and 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLAlchemy_DATABASE_URI']='postgres://aoevcjxijbvzui:7a977da6e94473b7b66497dd56b7a31792280eda65b0d5710e235c5ed2e3fbb9@ec2-44-209-57-4.compute-1.amazonaws.com:5432/d8t0kmpfhbcmur'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db' # this is a default command to start with SQLALCHEMY and 
 #here 'SQLALCHEMY_DATABASE_URI' is the path to where the DB is stored
 db = SQLAlchemy(app)
 
